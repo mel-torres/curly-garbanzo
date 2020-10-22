@@ -1,0 +1,18 @@
+ (function() {
+        var subdomain = (function() {
+          var query = /[?&]css=([^&#]*)/i.exec(window.location.search);
+          if(query) {
+            return query[1];
+          }
+          var URL = window.location.host.split('.');
+          if (URL.length > 1) {
+            return URL[0];
+          }
+        })();
+        if (subdomain) {
+          var link = document.createElement('link');
+          link.rel = "stylesheet";
+          link.href = "/" + subdomain + ".css";
+          document.getElementsByTagName('head')[0].appendChild(link);
+        }
+      })();
