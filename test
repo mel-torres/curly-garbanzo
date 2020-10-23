@@ -1,0 +1,9 @@
+int main(int argc, char **argv)
+{
+    int memcpy_size = 5;
+    int src_size = 10;
+    int dst_size = memcpy_size * src_size;
+    char *dst = malloc(dst_size);
+    char *src = malloc(src_size);
+    memcpy(dst, src, memcpy_size);
+}
